@@ -685,7 +685,9 @@ class AzureArchitectAgent:
                 f"Provider: {provider}"
             )
             
-            docs_tool = await self._resolve_docs_tool()\n            tools_to_use = tf_mcp if not docs_tool else [tf_mcp, docs_tool]\n            resp = await self.chat_agent.run(prompt, tools=tools_to_use)
+            docs_tool = await self._resolve_docs_tool()
+            tools_to_use = tf_mcp if not docs_tool else [tf_mcp, docs_tool]
+            resp = await self.chat_agent.run(prompt, tools=tools_to_use)
             text = getattr(resp, "result", str(resp))
             
             # Extract JSON from response
@@ -742,7 +744,9 @@ class AzureArchitectAgent:
                 f"```hcl\n{terraform_code}\n```"
             )
             
-            docs_tool = await self._resolve_docs_tool()\n            tools_to_use = tf_mcp if not docs_tool else [tf_mcp, docs_tool]\n            resp = await self.chat_agent.run(prompt, tools=tools_to_use)
+            docs_tool = await self._resolve_docs_tool()
+            tools_to_use = tf_mcp if not docs_tool else [tf_mcp, docs_tool]
+            resp = await self.chat_agent.run(prompt, tools=tools_to_use)
             text = getattr(resp, "result", str(resp))
             
             # Extract JSON from response
@@ -788,7 +792,9 @@ class AzureArchitectAgent:
                 "Return ONLY JSON: {\"provider\": string, \"version\": string, \"resources\": [string], \"data_sources\": [string]}"
             )
             
-            docs_tool = await self._resolve_docs_tool()\n            tools_to_use = tf_mcp if not docs_tool else [tf_mcp, docs_tool]\n            resp = await self.chat_agent.run(prompt, tools=tools_to_use)
+            docs_tool = await self._resolve_docs_tool()
+            tools_to_use = tf_mcp if not docs_tool else [tf_mcp, docs_tool]
+            resp = await self.chat_agent.run(prompt, tools=tools_to_use)
             text = getattr(resp, "result", str(resp))
             
             # Extract JSON from response
